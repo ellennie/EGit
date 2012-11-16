@@ -1,7 +1,4 @@
-/*
- * Author* Er Nie
- * 
- */
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -10,8 +7,12 @@ import javax.swing.JMenuItem;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JComboBox;
+import javax.swing.JTextPane;
+
 import java.awt.Checkbox;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.Rectangle;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
@@ -19,12 +20,16 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import javax.swing.JButton;
-
+import javax.swing.JPanel;
+/*
+ * These codes are used for Map System
+ * Author Nie Er, Vivien Fazakas beautified. 
+ */
 
 public class Maps {
 
 	String Menu;
-	String Information; //add first info here
+	String Information="Test"; //add first info here
 	String Information1;//="test1"; //add info of Kepten in ENG here;
 	String Information2;//="test2"; //add info of kepten in SWE here;
 	String Information3; //add info of Mimolett in Eng here;
@@ -49,7 +54,8 @@ public class Maps {
 	String Information22;//="test22"; //add info of Pressbyrån in SWE here;
 	String Language;
 	private JFrame frame;
-	String[] restaurant = {"Refresh","Kepten Nemo`s Pizzeria","Mimolett HB",
+	String Refresh="Refresh";
+	String[] restaurant = {Refresh,"Kepten Nemo`s Pizzeria","Mimolett HB",
 			"Bistro Kajkanten","Tingbergets Pizzeria Grillbar","Chalmers Studentkårs Restaurang",
 			"Restaurang Göta Älv","Äran Restaurang","Cristina Taspinar",
 			"Restaurang Älvstranden","Bekir Erdal","Pressbyrån","ALL"};
@@ -78,7 +84,7 @@ public class Maps {
 	private void initialize() {
 		// build a frame with lindholmen`s map
 		frame = new JFrame();
-		frame.setBounds(100, 100, 840, 600);
+		frame.setBounds(100, 100, 935, 675);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		//The label of restaurant marks
@@ -94,61 +100,78 @@ public class Maps {
 		final JLabel Res10 = new JLabel(image2);
 		final JLabel Res11 = new JLabel(image2);
 		JLabel label = new JLabel(image1);
-		label.setBounds(0, 30, 640, 480);
-		Res1.setBounds(0,0,365,125);
+		label.setBounds(0, 125, 640, 480);
+		Res1.setBounds(0,100,365,125);
 		frame.getContentPane().add(Res1);
 		Res1.setVisible(false);
-		Res2.setBounds(0,0,750,65);
+		Res2.setBounds(0,100,750,65);
 		frame.getContentPane().add(Res2);
 		Res2.setVisible(false);
-		Res3.setBounds(0,0,880,430);
+		Res3.setBounds(0,100,880,430);
 		frame.getContentPane().add(Res3);
 		Res3.setVisible(false);
-		Res4.setBounds(0,0,700,355);
+		Res4.setBounds(0,100,700,355);
 		frame.getContentPane().add(Res4);
 		Res4.setVisible(false);
-		Res5.setBounds(0,0,1025,295);
+		Res5.setBounds(0,100,1025,295);
 		frame.getContentPane().add(Res5);
 		Res5.setVisible(false);
-		Res6.setBounds(0,0,1135,490);
+		Res6.setBounds(0,100,1135,490);
 		frame.getContentPane().add(Res6);
 		Res6.setVisible(false);
-		Res7.setBounds(0,0,695,695);
+		Res7.setBounds(0,100,695,695);
 		frame.getContentPane().add(Res7);
 		Res7.setVisible(false);
-		Res8.setBounds(0,0,570,675);
+		Res8.setBounds(0,100,570,675);
 		frame.getContentPane().add(Res8);
 		Res8.setVisible(false);
-		Res9.setBounds(0,0,580,840);
+		Res9.setBounds(0,100,580,840);
 		frame.getContentPane().add(Res9);
 		Res9.setVisible(false);
-		Res10.setBounds(0,0,305,565);
+		Res10.setBounds(0,100,305,565);
 		frame.getContentPane().add(Res10);
 		Res10.setVisible(false);
-		Res11.setBounds(0,0,755,145);
+		Res11.setBounds(0,100,755,145);
 		frame.getContentPane().add(Res11);
 		Res11.setVisible(false);
 		frame.getContentPane().add(label);
 		
 		//to show the Information here
-		final TextField textField = new TextField();
-		textField.setBounds(0, 508, 640, 54);
+		final JTextPane textField = new JTextPane();
+		textField.setBackground(new Color(245, 245, 220));
+		textField.setForeground(new Color(255, 165, 0));
+		textField.setBounds(700, 260, 225, 375);
+		textField.setFont(new Font("Bauhaus 93", Font.PLAIN, 25));//Vivien merged with fonts
 		frame.getContentPane().add(textField);
 		textField.setEditable(false);
 		textField.setText(Information);
 		
 		final JButton btnLanguageUK = new JButton(image3);
-		btnLanguageUK.setBounds(660, 106, 65, 25);
+		btnLanguageUK.setBounds(705, 170, 125, 25);
 		frame.getContentPane().add(btnLanguageUK);
 		btnLanguageUK.setVisible(false);
 		
 		final JButton btnLanguageSE = new JButton(image4);
-		btnLanguageSE.setBounds(660, 106, 65, 25);
+		btnLanguageSE.setBounds(705, 170, 125, 25);
 		frame.getContentPane().add(btnLanguageSE);
 		btnLanguageSE.setVisible(true);
 		
+		// This code below belongs to Vivien Fazakas
+		JLabel lblNewLabel = new JLabel("Feed me");
+		lblNewLabel.setForeground(new Color(255, 165, 0));
+		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 75));
+		lblNewLabel.setBounds(200, 10, 365, 120);
+		frame.add(lblNewLabel);
+		
+		JLabel lblNewLabel1 = new JLabel("Info");
+		lblNewLabel1.setForeground(new Color(255, 165, 0));
+		lblNewLabel1.setFont(new Font("Bauhaus 93", Font.PLAIN, 60));
+		lblNewLabel1.setBounds(700, 10, 300, 120);
+		frame.add(lblNewLabel1);
+		//Vivien Fazakas ends
+		
 		JComboBox comboBox = new JComboBox(restaurant);
-		comboBox.setBounds(650, 50, 160, 21);
+		comboBox.setBounds(705, 123, 160, 21);
 		frame.getContentPane().add(comboBox);
 		comboBox.setSelectedIndex(0);
 		comboBox.addItemListener(new ItemListener(){
@@ -428,16 +451,22 @@ public class Maps {
 		}
 		});
 		
-		JLabel lblLanguage = new JLabel("Language");
-		lblLanguage.setBounds(740, 110, 54, 15);
-		frame.getContentPane().add(lblLanguage);
-		
 		JLabel lblClickRefreshIf = new JLabel("Refresh if changed language");
-		lblClickRefreshIf.setBounds(650, 140, 175, 15);
+		lblClickRefreshIf.setBounds(705, 215, 175, 15);
+		lblClickRefreshIf.setForeground(new Color(255, 175, 0));
+		lblClickRefreshIf.setFont(new Font("Bauhaus 93", Font.PLAIN, 13)); //Vivien merged with fonts
 		frame.getContentPane().add(lblClickRefreshIf);
+		lblClickRefreshIf.setVisible(true);
+		
+		JLabel lblClickRefreshIf1 = new JLabel("Refresh if changed language in SE");
+		lblClickRefreshIf1.setBounds(705, 215, 175, 15);
+		lblClickRefreshIf1.setForeground(new Color(255, 175, 0));
+		lblClickRefreshIf1.setFont(new Font("Bauhaus 93", Font.PLAIN, 13));//Vivien merged with fonts
+		frame.getContentPane().add(lblClickRefreshIf1);
+		lblClickRefreshIf1.setVisible(false);
 		
 		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 0, 825, 21);
+		menuBar.setBounds(0, 0, 905, 21);
 		frame.getContentPane().add(menuBar);
 		
 		JMenu mnMenu = new JMenu("Menu");
@@ -445,6 +474,10 @@ public class Maps {
 	
 		JMenuItem exitAction = new JMenuItem("Exit");
 		mnMenu.add(exitAction);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(650, 30, 164, 203);
+		frame.getContentPane().add(panel);
 		exitAction.addActionListener(new ActionListener(){
 			 public void actionPerformed(ActionEvent arg0)
 			 {
@@ -457,6 +490,8 @@ public class Maps {
 			public void actionPerformed(ActionEvent e) {
 				btnLanguageSE.setVisible(false);
 				btnLanguageUK.setVisible(true);
+
+
 			}			
 		});
 		btnLanguageUK.addActionListener(new ActionListener(){
@@ -465,13 +500,9 @@ public class Maps {
 			public void actionPerformed(ActionEvent e) {
 				btnLanguageSE.setVisible(true);
 				btnLanguageUK.setVisible(false);
+
 			}			
 		});
 
 	}
 }
-
-/*
- * Author* Er Nie
- * 
- */
