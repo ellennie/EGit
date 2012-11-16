@@ -1,4 +1,3 @@
-
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -21,9 +20,10 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
 /*
  * These codes are used for Map System
- * Author Nie Er, Vivien Fazakas beautified. 
+ * Author Er Nie, Vivien Fazakas beautified. 
  */
 
 public class Maps {
@@ -506,3 +506,12 @@ public class Maps {
 
 	}
 }
+
+
+/*
+ * These codes are used for Map System
+ * Author Er Nie, Vivien Fazakas beautified. 
+ */
+
+
+
